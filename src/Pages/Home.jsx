@@ -4,6 +4,7 @@ import { useLoaderData, useRouteLoaderData } from 'react-router';
 import PlantCards from '../Components/PlantCards';
 import PlantTips from '../Components/PlantTips';
 import GreenExperts from '../Components/GreenExperts';
+import EcoDecorIdeas from '../Components/EcodecorIdeas';
 
 const Home = () => {
    
@@ -21,6 +22,7 @@ const Home = () => {
       <PlantCards data={data}></PlantCards>
       <PlantTips tips={tips}></PlantTips>
       <GreenExperts></GreenExperts>
+      <EcoDecorIdeas></EcoDecorIdeas>
     </div>
   );
 };

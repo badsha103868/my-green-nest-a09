@@ -30,11 +30,11 @@ const experts = [
 const GreenExperts = () => {
   return (
     <div className="p-6 bg-gray-50">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+      <h2 className="text-2xl font-bold text-green-700 mb-6 text-center">
         Meet Our Green Experts
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {experts.map((expert) => (
           <div
             key={expert.id}

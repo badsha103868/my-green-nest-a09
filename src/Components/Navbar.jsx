@@ -30,7 +30,7 @@ const Navbar = () => {
    
       <div className='flex items-center gap-1 '>
        <img className='w-[35px] h-[35px] md:w-[40px] md:h-[40px] rounded-full ' src={logoImg } alt="" />
-      <h3 className=" font-bold text-lg md:text-xl text-[#632ee3] ">GREEN-NEST</h3>
+      <h3 className=" font-bold text-lg md:text-xl text-[#2E7D32] ">GREEN-NEST</h3>
     </div>
  
   </div>
@@ -42,7 +42,7 @@ const Navbar = () => {
   </div>
   {/* navbar right */}
   <div  className="navbar-end ">
-    <a  className="btn bg-[linear-gradient(125.07deg,rgba(99,46,227,1),rgba(159,98,242,1)_100%)] text-white text-base  font-semibold ">Login</a>
+    <a  className="btn bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-500 text-white text-base font-semibold border-none transition-all duration-300">Login</a>
   </div>
    </div>
   
