@@ -5,25 +5,25 @@ const experts = [
     "id": 1,
     "name": "Amina Rahman",
     "specialization": "Indoor Plant Specialist",
-    "image": "https://i.postimg.cc/8kQy1y0P/expert-amina.png"
+    "image": "https://i.ibb.co.com/bg0pnwFG/expert-amena.jpg"
   },
   {
     "id": 2,
     "name": "Rafiq Ahmed",
     "specialization": "Succulent & Cactus Expert",
-    "image": "https://i.postimg.cc/FHqP8kF0/expert-rafiq.png"
+    "image": "https://i.ibb.co.com/fGDSMCd5/expert-rafiq.jpg"
   },
   {
     "id": 3,
     "name": "Tania Chowdhury",
     "specialization": "Air Purifying Plants Consultant",
-    "image": "https://i.postimg.cc/Mp1F3Q1y/expert-tania.png"
+    "image": "https://i.ibb.co.com/20DSGN3b/expert-taniya.jpg"
   },
   {
     "id": 4,
     "name": "Shahriar Hossain",
     "specialization": "Flowering Indoor Plants",
-    "image": "https://i.postimg.cc/3Jz6L2qk/expert-shahriar.png"
+    "image": "https://i.ibb.co.com/GvL4qd1P/expert-sharirar.jpg"
   }
 ]
 
@@ -38,7 +38,7 @@ const GreenExperts = () => {
         {experts.map((expert) => (
           <div
             key={expert.id}
-            className="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg transition-shadow text-center"
+            className="bg-[#E6F4EA] rounded-2xl shadow-md p-4 hover:shadow-lg transition-shadow text-center"
           >
             <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full border-4 border-green-100">
               <img
