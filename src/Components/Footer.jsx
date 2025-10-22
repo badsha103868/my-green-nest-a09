@@ -9,8 +9,8 @@ const Footer = () => {
      <footer className="footer flex flex-col sm:flex-row sm:flex-wrap md:justify-between lg:justify-evenly bg-[#001931] text-base-content p-10">
   {/* Hero Apps Section */}
   <nav className="mb-6 sm:mb-0 max-w-xs">
-    <div  className='flex items-center gap-1'>
-      <img className='w-[30px] h-[30px]' src={logoImg} alt="" />
+    <div  className='flex  gap-1'>
+      <img className='w-[30px] h-[30px] rounded-2xl' src={logoImg} alt="" />
     <h6 className="footer-title text-lg font-semibold text-white">Green Nest</h6>
     </div>
     <p className="text-sm leading-relaxed text-white">

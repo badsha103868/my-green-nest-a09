@@ -5,11 +5,11 @@ import logoImg from '../assets/logo.png'
 const Navbar = () => {
 
   const navLinks = <> 
-    <NavLink to='/' className={({isActive})=> isActive? "nav-link active": "nav-link"}><li >Home</li></NavLink>
+    <NavLink to='/'><li >Home</li></NavLink>
 
-    <NavLink to='/plants'  className={({isActive})=> isActive? "nav-link active": "nav-link"}><li>Plants</li></NavLink>
+    <NavLink to='/plants'><li>Plants</li></NavLink>
    
-    <NavLink to='/myProfiles' className={({isActive})=> isActive? "nav-link active": "nav-link"}><li >My Profile</li></NavLink>
+    <NavLink to='/myProfiles'><li >My Profile</li></NavLink>
  
   </>
   return (

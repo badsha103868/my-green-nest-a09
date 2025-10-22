@@ -20,11 +20,12 @@
   font-family: "Poppins", sans-serif;
 }
 
-a.active{
-  @apply bg-base-300
+.menu a.active{
+  text-decoration: underline;
+  color:  green;
 
 }
-.nav-link{
+.menu a{
   margin:20px;
   text-decoration: none;
 }
