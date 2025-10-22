@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router';
-import logoImg from '../assets/logo.png'
+import logoImg from '../assets/logo5.jpeg'
 
 const Navbar = () => {
 
@@ -13,7 +13,7 @@ const Navbar = () => {
  
   </>
   return (
-    <div className="navbar bg-[#ffffff] shadow-sm py-2 md:py-3 px-1 md:px-10 lg:px-15 ">
+    <div className="navbar bg-base-200 shadow-sm py-2 md:py-3 px-1 md:px-10 lg:px-15 ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,7 +29,7 @@ const Navbar = () => {
     {/* navbar left */}
    
       <div className='flex items-center gap-1 '>
-       <img className='w-[35px] h-[35px] md:w-[40px] md:h-[40px] rounded-xl ' src={logoImg } alt="" />
+       <img className='w-[35px] h-[35px] md:w-[40px] md:h-[40px] rounded-full ' src={logoImg } alt="" />
       <h3 className=" font-bold text-lg md:text-xl text-[#632ee3] ">GREEN-NEST</h3>
     </div>
  

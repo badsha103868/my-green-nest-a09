@@ -3,6 +3,8 @@ import Root from "../Root/Root";
 import Home from "../Pages/Home";
 import Plants from "../Pages/Plants";
 import MyProfile from "../Pages/MyProfile";
+import ErrorPage from "../ErrorPage/ErrorPage";
+
 
 
 
@@ -16,16 +18,22 @@ const router = createBrowserRouter([
     {
       index: true,
       path:"/",
-      element:<Home></Home>
+      element:<Home></Home>,
+      loader: ()=> fetch('/plants.json')
      },
      {
       path:"/plants",
       Component:Plants
      },
+     
      {
       path:'/myProfiles',
       Component: MyProfile
-     }
+     },
+     {
+        path:'*',
+        Component:ErrorPage
+       }
   ]
   }
 ])

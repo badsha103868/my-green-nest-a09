@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImg from '../assets/logo.png'
+import logoImg from '../assets/logo5.jpeg'
  import fbImg from '../assets/fb.png'
  import twitterImg from '../assets/twitter.png'
  import linkedinImg from '../assets/linkedIn.png'
