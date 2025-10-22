@@ -6,13 +6,14 @@ const PlantCard = ({plantData}) => {
   const {plantName,image,price,rating,} = plantData
 
   return (
-   <div className=" bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      <img
-        src={image}
-        alt={plantName}
-        className="w-full h-48 object-cover"
-      />
-
+   <div className=" bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow ">
+          <div className="w-full h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden">
+        <img
+          src={image}
+          alt={plantName}
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
       <div className="p-4 space-y-2">
         <h2 className="text-lg font-semibold text-gray-800">{plantName}</h2>
 
