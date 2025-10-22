@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "category": "Watering",
+    "title": "Keep Soil Moist, Not Soaked",
+    "tip": "Water your plants when the top inch of soil feels dry. Overwatering can cause root rot, so ensure the pot has good drainage.",
+    "frequency": "1–2 times per week depending on season",
+    "icon": "💧"
+  },
+  {
+    "id": 2,
+    "category": "Watering",
+    "title": "Use Room Temperature Water",
+    "tip": "Cold water can shock plant roots. Always use water that’s close to room temperature for consistent growth.",
+    "frequency": "Every watering session",
+    "icon": "🚿"
+  },
+  {
+    "id": 3,
+    "category": "Sunlight",
+    "title": "Provide Indirect Sunlight",
+    "tip": "Most indoor plants thrive in bright but indirect sunlight. Avoid harsh midday rays that can scorch leaves.",
+    "frequency": "6–8 hours of filtered light daily",
+    "icon": "☀️"
+  },
+  {
+    "id": 4,
+    "category": "Sunlight",
+    "title": "Rotate Plants Regularly",
+    "tip": "Rotate your plants every few days so all sides receive equal sunlight and grow evenly.",
+    "frequency": "Once a week",
+    "icon": "🔄"
+  },
+  {
+    "id": 5,
+    "category": "Fertilizing",
+    "title": "Feed During Growing Season",
+    "tip": "Use a balanced, water-soluble fertilizer every 2–4 weeks during spring and summer when plants are actively growing.",
+    "frequency": "Twice a month (spring/summer)",
+    "icon": "🌿"
+  },
+  {
+    "id": 6,
+    "category": "Fertilizing",
+    "title": "Skip Fertilizer in Dormant Periods",
+    "tip": "Reduce or stop fertilizing during fall and winter. Plants grow slower and don’t need extra nutrients.",
+    "frequency": "Pause in fall/winter",
+    "icon": "❄️"
+  }
+]

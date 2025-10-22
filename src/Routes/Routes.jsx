@@ -12,14 +12,17 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
+    id:"root",
     path:'/',
     element:<Root></Root>,
+   loader: ()=>fetch('/plantCareTips.json'),
     children:[
     {
-      index: true,
+      index: true, 
       path:"/",
       element:<Home></Home>,
-      loader: ()=> fetch('/plants.json')
+      
+       loader: ()=> fetch('/plants.json'),
      },
      {
       path:"/plants",

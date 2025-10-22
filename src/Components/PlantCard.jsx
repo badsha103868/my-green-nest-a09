@@ -6,7 +6,7 @@ const PlantCard = ({plantData}) => {
   const {plantName,image,price,rating,} = plantData
 
   return (
-   <div className=" bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow ">
+   <div className=" bg-[#E6F4EA] rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow ">
           <div className="w-full h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden">
         <img
           src={image}
