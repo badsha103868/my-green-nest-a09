@@ -47,7 +47,7 @@ const FormPage = () => {
           placeholder="Email" />
           
           
-          <button className="btn bg-green-500 text-white mt-4">Book Now</button>
+          <button className="btn  bg-green-500 text-white mt-4">Book Now</button>
         </form>
       </div>
     </div>

@@ -6,6 +6,9 @@ import MyProfile from "../Pages/MyProfile";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import PlantsDetails from "../Pages/PlantsDetails";
 import FormPage from "../Pages/FormPage";
+import AuthLayout from "../Layout/AuthLayout";
+import Login from "../Pages/Login";
+import SignUp from "../Pages/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -21,13 +24,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/plants",
-        element: <Plants></Plants>
-      },
-      {
-        path: "/plantsDetails/:id",
-        element: <PlantsDetails></PlantsDetails>,
+        element: <Plants></Plants>,
         loader: () => fetch('/plants.json')
+
       },
+      
       {
         path: "/myProfiles",
         element: <MyProfile></MyProfile>
@@ -36,12 +37,33 @@ const router = createBrowserRouter([
          path: '/formPage',
          element: <FormPage></FormPage>
       },
+     
+     
+     ]
+    },
       {
-        path: "*",
+        path: "/plantsDetails/:id",
+        element: <PlantsDetails></PlantsDetails>,
+        loader: () => fetch('/plants.json')
+      },
+      {
+        path:'/auth',
+        element:<AuthLayout></AuthLayout>,
+        children:[
+          {
+          path:'/auth/login/',
+          element:<Login></Login>
+          },
+          {
+            path:'/auth/signUp/',
+            element:<SignUp></SignUp>
+          }
+        ]
+       },
+       {
+        path: "/*",
         element: <ErrorPage></ErrorPage>
-      }
-    ]
-  }
+      },
 ]);
 
 export default router;

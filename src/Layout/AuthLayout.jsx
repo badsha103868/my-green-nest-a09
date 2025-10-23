@@ -1,9 +1,30 @@
 import React from 'react';
+import Navbar from '../Components/Navbar';
+import { Outlet } from 'react-router';
+import Footer from '../Components/Footer';
+import { ToastContainer } from 'react-toastify';
 
 const AuthLayout = () => {
   return (
-    <div>
-      <h2>This is auth layout </h2>
+    <div className='w-11/12 mx-auto '>
+      <Navbar></Navbar>
+       <Outlet ></Outlet>
+       <Footer></Footer>
+
+
+
+         {/* ToastContainer */}
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

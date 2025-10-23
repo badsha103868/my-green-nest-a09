@@ -1,9 +1,65 @@
 import React from 'react';
+import { FcGoogle } from 'react-icons/fc';
+import { Link } from 'react-router';
 
 const SignUp = () => {
+
+   
+
+
+
+
+
+
+
+
   return (
-    <div>
-      <h2>This is sign up page</h2>
+    <div className='flex justify-center items-center  min-h-screen'>
+      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
+        
+        {/* form */}
+      <form className="card-body">
+        <h1 className="text-2xl font-bold text-center">Sign up your account</h1>
+        
+        <fieldset className="fieldset">
+          
+          {/* Name */}
+          <label className="label">Name</label>
+          <input 
+          type="text" 
+          className="input" 
+          name='name'
+          placeholder="Your Name" required />
+           {/* Photo Url */}
+          <label className="label">Photo URL</label>
+          <input 
+          type="text" 
+          className="input" 
+          name='photoUrl'
+          placeholder="Your Photo URL" required />
+          {/* email */}
+          <label className="label">Email</label>
+          <input
+           type="email" 
+           className="input"
+             name='email'
+            placeholder="Email" required />
+            {/* password */}
+          <label className="label">Password</label>
+          <input 
+          type="password" 
+          className="input"
+          name='password'
+           placeholder="Password" required />
+           
+          {/*login  button */}
+          <button type="submit" className="btn btn-neutral mt-4">Sign Up</button>
+        </fieldset>
+         <p className='font-semibold text-center mt-5'>All Ready Have An Account ? <Link className='text-secondary' to='/auth/login/'>Login</Link></p>
+          <button className='btn btn-secondary btn-outline w-full mt-4'><FcGoogle size={24} /> Login with Google</button>
+      </form>
+
+    </div>
     </div>
   );
 };
