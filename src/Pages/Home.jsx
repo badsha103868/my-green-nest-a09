@@ -4,7 +4,8 @@ import { useLoaderData, useRouteLoaderData } from 'react-router';
 import PlantCards from '../Components/PlantCards';
 import PlantTips from '../Components/PlantTips';
 import GreenExperts from '../Components/GreenExperts';
-import EcoDecorIdeas from '../Components/EcodecorIdeas';
+import EcoDecorIdeas from '../Components/EcoDecorIdeas';
+
 
 const Home = () => {
    
@@ -18,6 +19,7 @@ const Home = () => {
 
   return (
     <div>
+      
       <Banner></Banner>
       <PlantCards data={data}></PlantCards>
       <PlantTips tips={tips}></PlantTips>

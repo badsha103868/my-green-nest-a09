@@ -1,9 +1,10 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 const PlantCard = ({plantData}) => {
 
-  const {plantName,image,price,rating,} = plantData
+  const {plantName,image,price,rating,plantId} = plantData
 
   return (
    <div className=" bg-[#E6F4EA] rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow ">
@@ -26,9 +27,11 @@ const PlantCard = ({plantData}) => {
           </div>
         </div>
 
+        <Link to={`/plantsDetails/${plantId}`}>
         <button className="w-full mt-2 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition-colors duration-200">
           View Details
         </button>
+        </Link>
       </div>
     </div>
   );
