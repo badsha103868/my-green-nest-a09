@@ -5,6 +5,7 @@ import Plants from "../Pages/Plants";
 import MyProfile from "../Pages/MyProfile";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import PlantsDetails from "../Pages/PlantsDetails";
+import FormPage from "../Pages/FormPage";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/myProfiles",
         element: <MyProfile></MyProfile>
+      },
+      {
+         path: '/formPage',
+         element: <FormPage></FormPage>
       },
       {
         path: "*",

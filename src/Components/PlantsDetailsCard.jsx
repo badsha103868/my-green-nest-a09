@@ -1,17 +1,18 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 const PlantsDetailsCard = ({ plants }) => {
   const { plantName, image, price, rating, availableStock, description } = plants;
 
   return (
-    <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden mt-5 md:mt-10 border border-gray-100">
+    <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden mt-5 md:mt-10 ">
       {/* Full Image Display */}
       <div className="bg-gray-100 flex justify-center items-center p-4">
         <img
           src={image}
           alt={plantName}
-          className="w-full h-[120vh] object-cover rounded-xl"
+          className="w-full  object-contain rounded-xl"
         />
       </div>
 
@@ -40,9 +41,9 @@ const PlantsDetailsCard = ({ plants }) => {
         <p className="text-gray-700 leading-relaxed">{description}</p>
 
         {/* Add to Cart Button */}
-        <button className='btn bg-green-600 hover:bg-green-700 w-full mt-4 py-3 rounded-xl text-white font-semibold text-xl'>
+        <Link to='/formPage' className='btn bg-green-600 hover:bg-green-700 w-full mt-4 py-3 rounded-xl text-white font-semibold text-xl'>
            Book Consultation
-        </button>
+        </Link>
       </div>
     </div>
   );
