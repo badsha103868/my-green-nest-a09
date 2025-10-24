@@ -1,4 +1,4 @@
-import React, { use, useContext, useState } from 'react';
+import React, { use, useContext, useRef, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
@@ -20,9 +20,11 @@ const Login = () => {
     // google provider
     const googleProvider = new GoogleAuthProvider();
 
+   
+
      
   // use context
-  const { signIn, googleSignIn } = use(AuthContext)
+  const { signIn, googleSignIn,  } = use(AuthContext)
 
 // handleSign in 
     const handleLogin =(e)=>{
@@ -54,11 +56,12 @@ const Login = () => {
           form.reset()
        })
     }
+    
 
   //  google sign in
   const handleGoogleSignIn= ()=>{
         googleSignIn(googleProvider)
-        .then(result =>{
+        .then(result =>{ 
         const user = result.user
       console.log(user)
       toast.success("Log in successfully!");
@@ -88,6 +91,7 @@ const Login = () => {
            type="email" 
            className="input"
              name='email'
+             
             placeholder="Email" required onChange={() => setError('')} />
 
             {/* password */}
@@ -100,10 +104,10 @@ const Login = () => {
            onChange={() => setError('')}  />
 
            {/* forget password */}
-          <div><a className="link link-hover">Forgot password?</a></div>
+          <div className='mt-2'><Link to='/auth/forgetPassword/'  className="link link-hover text-green-600 hover:text-green-800 underline text-sm">Forgot password?</Link></div>
 
           {/*login  button */}
-          <button type="submit" className="btn btn-neutral mt-4">Login</button>
+          <button type="submit" className="btn btn-neutral bg-green-600 hover:bg-green-700 text-white mt-4">Login</button>
         
         {/* error showing  */}
         {

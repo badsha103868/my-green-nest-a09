@@ -110,7 +110,7 @@ const SignUp = () => {
   
 
     // google log in 
-    const handleGoogleSignIn =()=>{
+    const handleGoogleSignUp =()=>{
        googleSignIn(googleProvider)
        .then(result =>{
         const user = result.user
@@ -171,7 +171,7 @@ const SignUp = () => {
            placeholder="Password" required />
            
           {/*login  button */}
-          <button type="submit" className="btn btn-neutral mt-4">Sign Up</button>
+          <button type="submit" className="btn btn-neutral bg-green-600 hover:bg-green-700 text-white mt-4">Sign Up</button>
 
         {/* error and success showing  */}
            
@@ -183,7 +183,7 @@ const SignUp = () => {
         }
         </fieldset>
          <p className='font-semibold text-center mt-5'>All Ready Have An Account ? <Link className='text-secondary' to='/auth/login/'>Login</Link></p>
-          <button onClick={handleGoogleSignIn} className='btn btn-secondary btn-outline w-full mt-4'><FcGoogle size={24} /> Login with Google</button>
+          <button onClick={handleGoogleSignUp} className='btn btn-secondary btn-outline w-full mt-4'><FcGoogle size={24} /> Sign up with Google</button>
       </form>
 
     </div>

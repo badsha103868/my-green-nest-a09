@@ -68,6 +68,7 @@ const UpdateForm = () => {
           type="text" 
           className="input" 
           name='name'
+           defaultValue={user?.displayName}
           placeholder="Your Name" required />
            {/* Photo Url */}
           <label className="label">Photo URL</label>
@@ -75,6 +76,7 @@ const UpdateForm = () => {
           type="text" 
           className="input" 
           name='photoUrl'
+          defaultValue={user?.photoURL}
           placeholder="Your Photo URL" required />
           
           <button  className="btn  bg-green-500 text-white mt-4">Update Profile</button>
