@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router';
 import PlantsDetailsCard from '../Components/PlantsDetailsCard';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const PlantsDetails = () => {
   
@@ -19,10 +21,13 @@ const PlantsDetails = () => {
   console.log(plants)
   return (
     <div >
-       <PlantsDetailsCard plants={plants}></PlantsDetailsCard>
-       <Link to='/' className='flex justify-center my-5'>
-        <button className='btn bg-gray-500 text-white'>Back to Home</button>
-        </Link>
+       <Navbar></Navbar>
+       <div className='p-2'>
+        <PlantsDetailsCard plants={plants}></PlantsDetailsCard>
+       </div>
+
+       <Footer></Footer>
+      
     </div>
   );
 };

@@ -29,7 +29,7 @@ const experts = [
 
 const GreenExperts = () => {
   return (
-    <div className="p-6 bg-gray-50">
+    <div className="p-2  mt-10 md:p-6 bg-gray-50">
       <h2 className="text-2xl font-bold text-green-700 mb-6 text-center">
         Meet Our Green Experts
       </h2>

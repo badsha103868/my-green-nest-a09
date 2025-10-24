@@ -1,16 +1,17 @@
 [
   {
     "plantId": 1,
-    "plantName": "Snake Plant",
-    "category": "Air Purifier",
-    "price": 18,
-    "rating": 4.8,
-    "availableStock": 10,
+    "plantName": "Pothos Golden",
+    "category": "Climber",
+    "price": 14,
+    "rating": 4.7,
+    "availableStock": 11,
     "careLevel": "Easy",
-    "description": "A hardy plant that purifies indoor air and thrives in low light.",
-    "image": "https://i.ibb.co.com/YBn2SPJZ/snake-plant2.jpg",
-    "providerName": "UrbanGreen Studio"
+    "description": "A vining plant with golden leaves that thrives in any light and purifies the air.",
+    "image": "https://i.ibb.co.com/SXBzc6LZ/Pothos-Golden.jpg",
+    "providerName": "NatureBloom"
   },
+  
   {
     "plantId": 2,
     "plantName": "Peace Lily",
@@ -85,15 +86,15 @@
   },
   {
     "plantId": 8,
-    "plantName": "Pothos Golden",
-    "category": "Climber",
-    "price": 14,
-    "rating": 4.7,
-    "availableStock": 11,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 10,
     "careLevel": "Easy",
-    "description": "A vining plant with golden leaves that thrives in any light and purifies the air.",
-    "image": "https://i.ibb.co.com/SXBzc6LZ/Pothos-Golden.jpg",
-    "providerName": "NatureBloom"
+    "description": "A hardy plant that purifies indoor air and thrives in low light.",
+    "image": "https://i.ibb.co.com/YBn2SPJZ/snake-plant2.jpg",
+    "providerName": "UrbanGreen Studio"
   },
   {
     "plantId": 9,

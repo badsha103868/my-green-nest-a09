@@ -6,7 +6,7 @@ const PlantsDetailsCard = ({ plants }) => {
   const { plantName, image, price, rating, availableStock, description } = plants;
 
   return (
-    <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden mt-5 md:mt-10 ">
+    <div className="max-w-3xl mx-auto min-h-screen bg-white rounded-2xl shadow-lg  overflow-hidden mt-5 md:mt-10 ">
       {/* Full Image Display */}
       <div className="bg-gray-100 flex justify-center items-center p-4">
         <img
@@ -25,11 +25,16 @@ const PlantsDetailsCard = ({ plants }) => {
         </div>
 
         {/* Rating */}
-        <div className="flex items-center gap-1 text-yellow-500">
+        <div className="flex items-center  gap-1 text-yellow-500">
           
-            <FaStar className="text-yellow-500"></FaStar>
+            <FaStar size={24} className="text-yellow-500 "></FaStar>
+            <FaStar size={24} className="text-yellow-500 "></FaStar>
+            <FaStar size={24} className="text-yellow-500 "></FaStar>
+            <FaStar size={24} className="text-yellow-500 "></FaStar>
+            <FaStar size={24} className="text-yellow-500 "></FaStar>
+           
           
-          <span className="ml-2 text-gray-600 text-xl font-medium">{rating} / 5</span>
+          <span className="ml-2 text-orange-500 text-xl font-bold">{rating} / 5</span>
         </div>
 
         {/* Stock Info */}

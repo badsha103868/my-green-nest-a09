@@ -1,12 +1,19 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
-      
+      // error state
+      const [error, setError]= useState('')
+       // success error
+  const [success, setSuccess] = useState(false);
 
     const { createUser } = use(AuthContext)
+
+    // use navigate
+    const navigate =  useNavigate()
 
 
     const handleSignUp =(e)=>{
@@ -19,14 +26,59 @@ const SignUp = () => {
       const password = form.password.value;
 
       console.log(name, photoUrl, email, password)
+
+
+      // name validation
+      if(name.length < 6){
+        setError("Name should be 6 character or more")
+        return;
+      }
+       setError("")
+       setSuccess(false);
+
+      //  email validation
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        
+        if(emailRegex.test(email)){
+          setError("Please enter a valid email address")
+          return;
+        }
+        setError("")
+        setSuccess(false)
+
+
+      // password validation
+       const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/; 
+        
+       if(!passwordRegex.test(password)){
+        setError("Password must be at least 6 characters or long and include uppercase and  lowercase")
+        return;
+       }
+       setError("");
+       setSuccess(false); 
+
+
+
+
     
        createUser(email, password)
        .then(result=>{
         const user = result.user
         console.log(user)
+         setSuccess(true);
+        toast.success("Sign up successfully!");
+
+            form.reset();
+
+        setTimeout(()=>{
+         navigate('/')
+           }, 1000)
+        
        })
-       .catch(error=>{
+       .catch((error)=>{
         console.log(error.message)
+        setError(error.message)
+        toast("please provide a valid info")
        })
 
 
@@ -63,7 +115,7 @@ const SignUp = () => {
           type="text" 
           className="input" 
           name='photoUrl'
-          placeholder="Your Photo URL" required />
+          placeholder="Your Photo URL"  />
           {/* email */}
           <label className="label">Email</label>
           <input
@@ -81,6 +133,15 @@ const SignUp = () => {
            
           {/*login  button */}
           <button type="submit" className="btn btn-neutral mt-4">Sign Up</button>
+
+        {/* error and success showing  */}
+           
+        {
+        success && <p className="text-green-500">Account Created Successfully</p>
+        }
+        {
+          error && <p className='text-secondary text-xs'>{error}</p>
+        }
         </fieldset>
          <p className='font-semibold text-center mt-5'>All Ready Have An Account ? <Link className='text-secondary' to='/auth/login/'>Login</Link></p>
           <button className='btn btn-secondary btn-outline w-full mt-4'><FcGoogle size={24} /> Login with Google</button>

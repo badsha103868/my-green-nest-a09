@@ -36,7 +36,7 @@ const ideas = [
 
 const EcoDecorIdeas = () => {
   return (
-    <section className="py-16 bg-[#F8F9F8]">
+    <section className="my-10 bg-gray-50 rounded-xl p-2">
       <div className="text-center mb-10">
         <h2 className="text-4xl font-bold text-green-700 mb-3">
           Eco-Decor Ideas
