@@ -10,6 +10,7 @@ import AuthLayout from "../Layout/AuthLayout";
 import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import PrivateRoute from "../Provider/PrivateRoute";
+import UpdateForm from "../Pages/UpdateForm";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
          path: '/formPage',
          element: <FormPage></FormPage>
       },
+      {
+        path:'/updateForm',
+        element:<UpdateForm></UpdateForm>
+      }
      
      
      ]

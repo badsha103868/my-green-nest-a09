@@ -1,11 +1,13 @@
 import React, { use } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import userImg from '../assets/icons8-avatar-48.png'
+import { Link, useNavigate } from 'react-router';
 
 const MyProfile = () => {
  
 
-  const { user } = use(AuthContext)
+  const { user  } = use(AuthContext)
+   
    
   return (
    <div className="flex justify-center items-center min-h-screen bg-gray-100">
@@ -19,9 +21,10 @@ const MyProfile = () => {
             />
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">{user.displayName}</h2>
             <p className="text-gray-500 mb-6">{user.email}</p>
-            <button className="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition duration-300">
+             
+            <Link to='/updateForm'  className="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition duration-300">
               Update Profile
-            </button>
+            </Link>
           </>
         ) : (
           <p>Loading user info...</p>
