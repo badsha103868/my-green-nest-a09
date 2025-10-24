@@ -3,6 +3,12 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
+import { GoogleAuthProvider } from 'firebase/auth';
+
+
+
+
+
 
 const SignUp = () => {
       // error state
@@ -10,11 +16,16 @@ const SignUp = () => {
        // success error
   const [success, setSuccess] = useState(false);
 
-    const { createUser } = use(AuthContext)
+  
+
+    const { createUser, googleSignIn, updateUser, setUser } = use(AuthContext)
 
     // use navigate
     const navigate =  useNavigate()
+   
 
+    // google provider
+    const googleProvider = new GoogleAuthProvider()
 
     const handleSignUp =(e)=>{
       e.preventDefault()
@@ -39,13 +50,13 @@ const SignUp = () => {
       //  email validation
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         
-        if(emailRegex.test(email)){
+        if(!emailRegex.test(email)){
           setError("Please enter a valid email address")
           return;
         }
         setError("")
         setSuccess(false)
-
+       
 
       // password validation
        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/; 
@@ -64,8 +75,16 @@ const SignUp = () => {
        createUser(email, password)
        .then(result=>{
         const user = result.user
-        console.log(user)
-         setSuccess(true);
+        // update profile
+         updateUser({
+             displayName: name,
+             photoURL: photoUrl
+         })
+         .then(() =>{
+            setUser({...user,displayName: name,
+             photoURL: photoUrl})
+
+          setSuccess(true);
         toast.success("Sign up successfully!");
 
             form.reset();
@@ -73,6 +92,13 @@ const SignUp = () => {
         setTimeout(()=>{
          navigate('/')
            }, 1000)
+         })
+         .catch(error=>{
+          console.log(error.message)
+          setUser(user)
+         })
+        // console.log(user)
+         
         
        })
        .catch((error)=>{
@@ -80,11 +106,24 @@ const SignUp = () => {
         setError(error.message)
         toast("please provide a valid info")
        })
-
-
-
     }
+  
 
+    // google log in 
+    const handleGoogleSignIn =()=>{
+       googleSignIn(googleProvider)
+       .then(result =>{
+        const user = result.user
+        console.log(user)
+        toast.success("Signup & Log in successful")
+        setTimeout(()=>{
+          navigate('/')
+        },1000)
+       })
+       .catch(error =>{
+        console.log(error)
+       })
+    }
 
 
 
@@ -144,7 +183,7 @@ const SignUp = () => {
         }
         </fieldset>
          <p className='font-semibold text-center mt-5'>All Ready Have An Account ? <Link className='text-secondary' to='/auth/login/'>Login</Link></p>
-          <button className='btn btn-secondary btn-outline w-full mt-4'><FcGoogle size={24} /> Login with Google</button>
+          <button onClick={handleGoogleSignIn} className='btn btn-secondary btn-outline w-full mt-4'><FcGoogle size={24} /> Login with Google</button>
       </form>
 
     </div>

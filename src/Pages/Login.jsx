@@ -17,6 +17,7 @@ const Login = () => {
   const navigate =useNavigate()
     console.log(location)
    
+    // google provider
     const googleProvider = new GoogleAuthProvider();
 
      
