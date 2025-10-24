@@ -20,7 +20,7 @@ const PlantsDetails = () => {
    
   console.log(plants)
   return (
-    <div >
+    <div className='w-11/12 mx-auto'>
        <Navbar></Navbar>
        <div className='p-2'>
         <PlantsDetailsCard plants={plants}></PlantsDetailsCard>

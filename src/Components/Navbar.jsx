@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import {Link, NavLink } from "react-router";
 import logoImg from "../assets/logo5.jpeg";
+import userImg from '../assets/icons8-avatar-48.png'
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
@@ -80,9 +81,25 @@ const Navbar = () => {
       </div>
       {/* navbar right */}
       <div className="navbar-end ">
-        {
-          user ? (<button onClick={handleLogOut} className='btn btn-primary bg-[#2E7D32] px-10'>Logout</button>):(<Link to="/auth/login/" className='btn btn-primary bg-[#2E7D32] px-10'>Login</Link>)
-        }
+       {user ? (<div className="dropdown relative">
+          <img tabIndex={0} className="w-12 h-12 rounded-full" src={user.photoURL || userImg} alt="avatar" />
+           
+           <ul tabIndex="0" className="dropdown-content menu bg-base-100 rounded-box  w-48 p-1 left-1/2 -translate-x-1/2 absolute z-50 shadow-sm">
+          <li><a>{ user.displayName || "Badsha" }</a></li>
+           <li><a onClick={handleLogOut} >Logout</a></li>
+           </ul>
+          </div>): (
+          // Logged out view
+          <div className=" flex space-x-2">
+            <Link to='/auth/login/'> 
+            <button className="btn btn-primary bg-[#2E7D32] px-5">Login</button>
+            </Link>
+            <Link to='/auth/signUp'>
+            <button className="btn btn-primary bg-[#3b82f6] px-5">Sign Up</button>
+            </Link>
+          </div>
+        )}
+
       </div>
     </div>
   );
