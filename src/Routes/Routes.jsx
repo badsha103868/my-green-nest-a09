@@ -9,6 +9,7 @@ import FormPage from "../Pages/FormPage";
 import AuthLayout from "../Layout/AuthLayout";
 import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
+import PrivateRoute from "../Provider/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +44,9 @@ const router = createBrowserRouter([
     },
       {
         path: "/plantsDetails/:id",
-        element: <PlantsDetails></PlantsDetails>,
+        element: <PrivateRoute>
+            <PlantsDetails></PlantsDetails>
+           </PrivateRoute>,
         loader: () => fetch('/plants.json')
       },
       {
