@@ -82,7 +82,7 @@ const Navbar = () => {
       {/* navbar right */}
       <div className="navbar-end ">
        {user ? (<div className="dropdown relative">
-          <img tabIndex={0} className="w-12 h-12 rounded-full" src={user.photoURL || userImg} alt="avatar" />
+          <img tabIndex={0} className="w-12 h-12 rounded-full bg-white" src={user.photoURL || userImg} alt="avatar" />
            
            <ul tabIndex="0" className="dropdown-content menu bg-base-100 rounded-box  w-48 p-1 left-1/2 -translate-x-1/2 absolute z-50 shadow-sm">
           <li><a>{ user.displayName || "Badsha" }</a></li>

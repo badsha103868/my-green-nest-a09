@@ -3,6 +3,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
 
@@ -15,8 +16,12 @@ const Login = () => {
   // use navigate
   const navigate =useNavigate()
     console.log(location)
+   
+    const googleProvider = new GoogleAuthProvider();
+
+     
   // use context
-  const { signIn } = use(AuthContext)
+  const { signIn, googleSignIn } = use(AuthContext)
 
 // handleSign in 
     const handleLogin =(e)=>{
@@ -48,6 +53,23 @@ const Login = () => {
           form.reset()
        })
     }
+
+  //  google sign in
+  const handleGoogleSignIn= ()=>{
+        googleSignIn(googleProvider)
+        .then(result =>{
+        const user = result.user
+      console.log(user)
+      toast.success("Log in successfully!");
+      setTimeout(() => {
+      navigate(location.state ? location.state : '/');
+        }, 1000);
+        })
+        .catch(error=>{
+          console.log(error)
+        })
+  }
+
    
   return (
     <div className='flex justify-center items-center  min-h-screen'>
@@ -93,7 +115,7 @@ const Login = () => {
          <p className='font-semibold text-center mt-5'>Dont’t Have An Account ? <Link className='text-secondary' to='/auth/signUp/'>Sign Up</Link></p>
 
          {/* social login with google */}
-        <button className='btn btn-secondary btn-outline w-full mt-4'><FcGoogle size={24} /> Login with Google</button>
+        <button onClick={handleGoogleSignIn} className='btn btn-secondary btn-outline w-full mt-4'><FcGoogle size={24} /> Login with Google</button>
       </form>
     </div>
     </div>
