@@ -5,6 +5,8 @@ import PlantCards from '../Components/PlantCards';
 import PlantTips from '../Components/PlantTips';
 import GreenExperts from '../Components/GreenExperts';
 import EcoDecorIdeas from '../Components/EcoDecorIdeas';
+import PlantOfTheWeek from '../Components/PlantOfTheWeak';
+import PlantOfTheWeeks from '../Components/PlantOfTheWeeks';
 
 
 const Home = () => {
@@ -21,6 +23,7 @@ const Home = () => {
     <div>
       
       <Banner></Banner>
+      <PlantOfTheWeeks data={data}></PlantOfTheWeeks>
       <PlantCards data={data}></PlantCards>
       <PlantTips tips={tips}></PlantTips>
       <GreenExperts></GreenExperts>
