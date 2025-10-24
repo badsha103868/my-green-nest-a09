@@ -4,11 +4,14 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { FaEye, FaRegEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
 
   // errr state
   const [error, setError]= useState('')
+  // show password toggle state
+  const [showPassword, setShowPassword] = useState(false)
 
   //  use location
   const location = useLocation()
@@ -74,6 +77,12 @@ const Login = () => {
         })
   }
 
+    // show password
+    const handleShowPassword =(e)=>{
+      e.preventDefault();
+      setShowPassword(!showPassword)
+    }
+
    
   return (
     <div className='flex justify-center items-center  min-h-screen'>
@@ -95,13 +104,18 @@ const Login = () => {
             placeholder="Email" required onChange={() => setError('')} />
 
             {/* password */}
-          <label className="label">Password</label>
-          <input 
-          type="password" 
-          className="input"
-          name='password'
+            
+           <label className="label">Password</label>
+           <div className='relative'>
+             <input 
+            type={showPassword?"text": "password"}
+             className="input"
+              name='password'
            placeholder="Password" required 
            onChange={() => setError('')}  />
+
+             <button onClick={handleShowPassword} className='btn btn-xs top-2 right-5 absolute'>{showPassword? <FaRegEyeSlash /> : <FaEye />}</button>
+            </div>
 
            {/* forget password */}
           <div className='mt-2'><Link to='/auth/forgetPassword/'  className="link link-hover text-green-600 hover:text-green-800 underline text-sm">Forgot password?</Link></div>

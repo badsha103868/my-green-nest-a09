@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { FaEye, FaRegEyeSlash } from 'react-icons/fa';
 
 
 
@@ -16,7 +17,8 @@ const SignUp = () => {
        // success error
   const [success, setSuccess] = useState(false);
 
-  
+    // show password state
+  const [showPassword, setShowPassword] = useState(false)
 
     const { createUser, googleSignIn, updateUser, setUser } = use(AuthContext)
 
@@ -125,6 +127,11 @@ const SignUp = () => {
        })
     }
 
+    // handle show password toggle
+     const handleShowPassword = (e)=>{
+       e.preventDefault()
+        setShowPassword(!showPassword)
+       }
 
 
 
@@ -157,18 +164,28 @@ const SignUp = () => {
           placeholder="Your Photo URL"  />
           {/* email */}
           <label className="label">Email</label>
-          <input
+           
+             <input
            type="email" 
            className="input"
              name='email'
             placeholder="Email" required />
+            
+            
+
+           
             {/* password */}
           <label className="label">Password</label>
-          <input 
-          type="password" 
+          <div className='relative'>
+             <input 
+          type={showPassword? 'text': "password"} 
           className="input"
           name='password'
            placeholder="Password" required />
+
+            <button onClick={handleShowPassword} className="btn btn-xs top-2 right-5 absolute">{showPassword? <FaRegEyeSlash /> : <FaEye />}</button>
+
+          </div>
            
           {/*login  button */}
           <button type="submit" className="btn btn-neutral bg-green-600 hover:bg-green-700 text-white mt-4">Sign Up</button>
