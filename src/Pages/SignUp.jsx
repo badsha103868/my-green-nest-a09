@@ -6,7 +6,10 @@ import { toast } from 'react-toastify';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { FaEye, FaRegEyeSlash } from 'react-icons/fa';
 
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content'
 
+const MySwal = withReactContent(Swal)
 
 
 
@@ -89,6 +92,12 @@ const SignUp = () => {
           setSuccess(true);
         toast.success("Sign up successfully!");
 
+           MySwal.fire({
+            title: "Sign up successfully!",
+           text: "Signed Up!",
+           icon: "success"
+           })
+
             form.reset();
 
         setTimeout(()=>{
@@ -117,7 +126,16 @@ const SignUp = () => {
        .then(result =>{
         const user = result.user
         console.log(user)
-        toast.success("Signup & Log in successful")
+        toast.success("Signup successful")
+          
+         MySwal.fire({
+            title: "Sign up successfully!",
+           text: "Signed Up!",
+           icon: "success"
+           })
+
+
+
         setTimeout(()=>{
           navigate('/')
         },1000)

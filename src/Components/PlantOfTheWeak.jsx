@@ -3,7 +3,7 @@ import React from 'react';
 const PlantOfTheWeak = ({ plant }) => {
   return (
     <section className="bg-green-50 py-10">
-      <div className=" mx-auto px-6 text-center">
+      <div className=" mx-auto px-2 md:px-6 text-center">
         <h2 className="text-xl md:text-2xl font-bold text-green-700 mb-4">
           🌿 Plant of the Week
         </h2>

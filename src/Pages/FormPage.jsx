@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 const FormPage = () => {
   const [error, setError] = useState('');
+
+  const navigate = useNavigate()
    
   const handleBookNow = (e)=>{
     e.preventDefault();
@@ -17,8 +24,19 @@ const FormPage = () => {
     else{
       setError('')
     }
-    toast("Booked Successful !")
+    toast.success("Booked Successful !")
+
+       MySwal.fire({
+      title: "Booked Successful!",
+      text: "You Booked Consultation!",
+      icon: "success"
+       })
+
     e.target.reset();
+    setTimeout(()=>{
+      navigate('/plants')
+    }, 1000)
+
 
   }
  
@@ -34,7 +52,7 @@ const FormPage = () => {
           type="text"
           className="input"
           name='name'
-           placeholder="Your name" />
+           placeholder="Your name" required/>
            {
             error && <p className="text-red-500">{error}</p>
            }
@@ -44,7 +62,7 @@ const FormPage = () => {
           type="email" 
           className="input" 
           name='email'
-          placeholder="Email" />
+          placeholder="Email" required />
           
           
           <button className="btn  bg-green-500 text-white mt-4">Book Now</button>

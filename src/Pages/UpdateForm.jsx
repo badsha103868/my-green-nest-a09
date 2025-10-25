@@ -2,6 +2,10 @@ import React, { use, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 const UpdateForm = () => {
 
@@ -38,6 +42,12 @@ const UpdateForm = () => {
              photoURL: photoUrl})
 
               toast.success("Update profile successfully!");
+
+               MySwal.fire({
+            title: "Update profile successfully!",
+           text: "Updated Profile!",
+           icon: "success"
+           })
               
              form.reset(); 
 

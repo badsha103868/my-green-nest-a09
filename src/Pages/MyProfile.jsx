@@ -1,7 +1,7 @@
 import React, { use } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import userImg from '../assets/icons8-avatar-48.png'
-import { Link, useNavigate } from 'react-router';
+import { Link,  } from 'react-router';
 
 const MyProfile = () => {
  
@@ -27,7 +27,11 @@ const MyProfile = () => {
             </Link>
           </>
         ) : (
-          <p>Loading user info...</p>
+          <> 
+            <p className="text-xl text-gray-700">Please login to view your profile...</p>
+            {/*login  button */}
+          <Link to='/auth/login' type="submit" className="btn btn-neutral bg-green-600 hover:bg-green-700 text-white mt-4">Login</Link>
+          </>
         )}
       </div>
     </div>

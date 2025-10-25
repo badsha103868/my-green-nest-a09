@@ -3,6 +3,11 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router';
 
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
+
 const ForgetPassword = () => {
 
    // error state
@@ -21,6 +26,11 @@ const ForgetPassword = () => {
                 forgetPassword(email)
                 .then(()=>{
                  toast.success("Password reset email sent! Check your Gmail inbox or spam ");
+                 MySwal.fire({
+            title: "Password reset email sent!",
+           text: " Check your Gmail inbox or spam!",
+           icon: "success"
+           })
                  setTimeout(()=>{
                   navigate('/auth/login/')
                  }, 1000)

@@ -38,7 +38,7 @@ const EcoDecorIdeas = () => {
   return (
     <section className="my-10 bg-gray-50 rounded-xl p-2">
       <div className="text-center mb-10">
-        <h2 className="text-4xl font-bold text-green-700 mb-3">
+        <h2 className="text-3xl  md:text-4xl font-bold text-green-700 mb-3">
           Eco-Decor Ideas
         </h2>
         <p className="text-gray-600 max-w-xl mx-auto">
@@ -46,7 +46,7 @@ const EcoDecorIdeas = () => {
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 px-5 md:px-10">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 px-2 md:px-10">
         {ideas.map((idea, index) => (
           <motion.div
             key={idea.id}

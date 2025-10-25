@@ -5,6 +5,10 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { FaEye, FaRegEyeSlash } from 'react-icons/fa';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 const Login = () => {
 
@@ -36,7 +40,7 @@ const Login = () => {
       const form = e.target
       const email= form.email.value;
       const password = form.password.value;
-
+      
       console.log( email, password)
 
       signIn(email, password)
@@ -45,6 +49,15 @@ const Login = () => {
         console.log(user)
 
      toast.success("Log in successfully!");
+     
+     
+          MySwal.fire({
+            title: "Log in successfully!",
+           text: "Logged In!",
+           icon: "success"
+           })
+
+
       setTimeout(() => {
       navigate(location.state ? location.state : '/');
     }, 1000); 
@@ -68,6 +81,14 @@ const Login = () => {
         const user = result.user
       console.log(user)
       toast.success("Log in successfully!");
+    
+      MySwal.fire({
+            title: "Log in successfully!",
+           text: "Logged In!",
+           icon: "success"
+           })
+
+
       setTimeout(() => {
       navigate(location.state ? location.state : '/');
         }, 1000);
@@ -92,7 +113,7 @@ const Login = () => {
       <form onSubmit={handleLogin} className="card-body">
         <h1 className="text-2xl font-bold text-center">Login your account</h1>
         
-        <fieldset className="fieldset">
+        <fieldset  className="fieldset">
 
           {/* email */}
           <label className="label">Email</label>

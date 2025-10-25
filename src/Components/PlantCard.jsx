@@ -23,7 +23,7 @@ const PlantCard = ({plantData}) => {
 
           <div className="flex items-center gap-1">
             <FaStar className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-            <span className="text-sm text-gray-600">{rating}</span>
+            <span className="text-lg font-bold text-gray-600">{rating}</span>
           </div>
         </div>
 
