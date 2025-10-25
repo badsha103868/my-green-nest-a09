@@ -98,17 +98,17 @@ const Navbar = () => {
           <img tabIndex={0} className="w-12 h-12 rounded-full bg-white" src={user.photoURL || userImg} alt="avatar" />
            
            <ul tabIndex="0" className="dropdown-content menu bg-base-100 rounded-box w-52  md:w-64 p-1 left-2 -translate-x-1/2 absolute z-50 shadow-sm">
-          <li><a className="text-secondary text-xl">{ user.displayName || " " }</a></li>
+          <li><a className="text-secondary text-xl">{ user.displayName || "Guest" }</a></li>
            <li><a onClick={handleLogOut} className="text-green-500 text-xl">Logout</a></li>
            </ul>
           </div>): (
           // Logged out view
           <div className=" flex space-x-2">
             <Link to='/auth/login/'> 
-            <button className="btn btn-primary bg-[#2E7D32] px-1 md:px-5">Login</button>
+            <button className="btn btn-primary bg-[#2E7D32] px-2 md:px-5">Login</button>
             </Link>
             <Link to='/auth/signUp'>
-            <button className="btn btn-primary bg-[#3b82f6] px-1 md:px-5">Sign Up</button>
+            <button className="btn btn-primary bg-[#3b82f6] px-2 md:px-5">Sign Up</button>
             </Link>
           </div>
         )}

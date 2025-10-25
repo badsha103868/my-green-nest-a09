@@ -5,16 +5,16 @@
   ---
 
   
-## 🚀 Technologies Used
+##  Technologies Used
 
-### 🧩 Core
+###  Core
 - **React 19** – Component-based UI library  
 - **React DOM** – For rendering React components to the browser  
 - **Vite 7** – Lightning-fast build tool and development server  
 
 ---
 
-### 🎨 UI & Styling
+###  UI & Styling
 - **Tailwind CSS 4** – Utility-first CSS framework for rapid UI development  
 - **DaisyUI 5** – Tailwind-based UI component library  
 - **Framer Motion 12** – For beautiful animations and transitions  
