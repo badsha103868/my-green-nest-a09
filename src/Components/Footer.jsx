@@ -23,6 +23,7 @@ const Footer = () => {
     <h6 className="text-white footer-title text-lg font-semibold">Quick Links</h6>
     <a className="link link-hover">About</a>
     <a className="link link-hover">Contact</a>
+    <a className="link link-hover">Address</a>
     <a className="link link-hover">Privacy Policy</a>
     
     
