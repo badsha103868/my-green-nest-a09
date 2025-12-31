@@ -1,8 +1,10 @@
 #  My Green Nest:
 
-   A modern React web application built with Vite, Firebase, TailwindCSS, and other powerful libraries — designed for a smooth, fast, and elegant user experience.
+   Green Nest Project is your go-to platform for bringing nature indoors. We help users discover and buy indoor plants tailored to their personal preferences, space, and lifestyle. By combining convenience with greenery, we make it easy for everyone to create a healthier, more vibrant living space. Our mission is to inspire a love for plants while promoting a sustainable and eco-friendly lifestyle.
 
   ---
+   ## Live Site URL
+(https://my-green-nest-web-a09.netlify.app/)
 
   
 ##  Technologies Used
