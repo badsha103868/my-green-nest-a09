@@ -5,7 +5,9 @@
   ---
    ## Live Site URL
 (https://my-green-nest-web-a09.netlify.app/)
-**Project Image Screenshot: (https://i.ibb.co.com/5xT57VP2/Green-nest.png)
+
+##Project Image Screenshot:
+(https://i.ibb.co.com/5xT57VP2/Green-nest.png)
 
   
 ##  Technologies Used
